@@ -1,27 +1,45 @@
 # WebFront
 
 npm uninstall -g @angular/cli
+
 npm install -g @angular/cli
+
 ng new ?????
+
 npm --version
+
 npm install @angular/cdk --save
+
 ng serve 
+
 ctrl + c *para o projeto
+
 porta 4200
+
 ng generete module categorias --spec=fase
+
 ng generete component categorias/cateorias.pesquisa
+
 app module ts - > import {CategoriasModule} from '@categorias/categorias.module.ts';
+
 ng generate service categorias/categorias
 
 ng new "FrontSexta" --spec = false
+
 apagar a pasta do ng new node_modules
+
 npm install - instalar dependencias
+
 npm install primeng --save
 
 npm install -g @angular/cli
+
 ng -version
+
 ng --version
+
 npm install primeng --save
+
 ng server --open
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
