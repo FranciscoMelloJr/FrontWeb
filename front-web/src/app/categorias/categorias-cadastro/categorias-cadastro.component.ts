@@ -1,6 +1,6 @@
 import { MessageService } from 'primeng/api';
-import { CategoriasService } from './../categorias.service';
 import { Categoria } from './../model';
+import { CategoriasService } from './../categorias.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';

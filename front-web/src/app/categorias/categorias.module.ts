@@ -1,6 +1,9 @@
-import { CategoriasService } from './categorias.service';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+
+import { CategoriasService } from './categorias.service';
+import { CategoriasCadastroComponent } from './categorias-cadastro/categorias-cadastro.component';
 import { CategoriasPesquisaComponent } from './categorias-pesquisa/categorias-pesquisa.component';
 
 import {InputTextModule} from 'primeng/inputtext';
@@ -10,7 +13,7 @@ import {TooltipModule} from 'primeng/tooltip';
 import { ToastModule } from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { FormsModule } from '@angular/forms';
-import { CategoriasCadastroComponent } from './categorias-cadastro/categorias-cadastro.component';
+
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -19,6 +22,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     InputTextModule,
     ButtonModule,
+    BrowserModule,
     TableModule,
     TooltipModule,
     ToastModule,

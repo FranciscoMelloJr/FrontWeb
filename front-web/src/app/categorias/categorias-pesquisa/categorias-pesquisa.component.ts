@@ -29,6 +29,12 @@ export class CategoriasPesquisaComponent implements OnInit {
     });
   }
 
+  filtrarCategoria(categoria: string) {
+    this.service.listarPorNome(categoria).then(dados => {
+      this.categorias = dados;
+    });
+  }
+
   confirmarExclusao(categoria:any){
     this.conf.confirm({
       message: 'Tem certeza que deseja excluir '+categoria.nome+'?',

@@ -23,6 +23,10 @@ export class CategoriasService {
     return this.http.get<any>(this.categoriasURLFiltro).toPromise();
   }
 
+  listarPorNome(nome: string): Promise<any> {
+    return this.http.get<any>(this.categoriasURL + '?nome=' + nome).toPromise();
+  }
+
   excluir(id:number):Promise<void>{
     return this.http.delete(this.categoriasURL+'/'+id)
     .toPromise()
