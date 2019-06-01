@@ -1,3 +1,5 @@
+import { ButtonModule } from 'primeng/button';
+import { CidadesModule } from './cidades/cidades.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +18,12 @@ import { EstadosModule } from './estados/estados.module';
 import { EstadosPesquisaComponent } from './estados/estados-pesquisa/estados-pesquisa.component';
 import { EstadosCadastroComponent } from './estados/estados-cadastro/estados-cadastro.component';
 
+import {SidebarModule } from 'primeng/sidebar'
+import { CidadesCadastroComponent } from './cidades/cidades-cadastro/cidades-cadastro.component';
+
 const rotas: Routes = [
+  {path: '', redirectTo:'categorias', pathMatch:'full'},
+  {path: 'cidades', component: CidadesCadastroComponent},
   {path: 'categorias', component: CategoriasPesquisaComponent},
   {path: 'categorias/novo', component: CategoriasCadastroComponent},
   {path: 'categorias/:id', component: CategoriasCadastroComponent},
@@ -34,6 +41,9 @@ const rotas: Routes = [
     BrowserAnimationsModule,
     CategoriasModule,
     EstadosModule,
+    CidadesModule,
+    ButtonModule,
+    SidebarModule,
     HttpClientModule,
     ToastModule,
     RouterModule.forRoot(rotas)
