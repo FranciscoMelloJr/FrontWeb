@@ -21,10 +21,14 @@ import { EstadosCadastroComponent } from './estados/estados-cadastro/estados-cad
 import {SidebarModule } from 'primeng/sidebar'
 import { CidadesCadastroComponent } from './cidades/cidades-cadastro/cidades-cadastro.component';
 
+import { ProdutosCadastroComponent } from './produtos/produtos-cadastro/produtos-cadastro.component';
+import { ProdutosModule } from './produtos/produtos.module';
+
 const rotas: Routes = [
   {path: '', redirectTo:'categorias', pathMatch:'full'},
   {path: 'cidades', component: CidadesCadastroComponent},
   {path: 'categorias', component: CategoriasPesquisaComponent},
+  {path: 'produtos', component: ProdutosCadastroComponent},
   {path: 'categorias/novo', component: CategoriasCadastroComponent},
   {path: 'categorias/:id', component: CategoriasCadastroComponent},
   { path: 'estados', component: EstadosPesquisaComponent },
@@ -41,6 +45,7 @@ const rotas: Routes = [
     BrowserAnimationsModule,
     CategoriasModule,
     EstadosModule,
+    ProdutosModule,
     CidadesModule,
     ButtonModule,
     SidebarModule,
