@@ -1,5 +1,21 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<button pButton type="button" label="Click" ></button>
-<p-button label="Click" ></p-button>
-<p-button label="Click" ></p-button>
-<p-button label="Click" ></p-button>
+<p-sidebar [(visible)]="sideBar" [style]="{width:'15em'}">
+  <div class="ui-g">
+    <div class="ui-g-12 ui-fluid">
+    <h1 class="boxButton">Farmácia</h1>
+    <button type="button" (click)="sideBar = false" pButton icon="pi pi-plus" label="Cadastrar Cliente" routerLink="/clientes"class="ui-button-success"></button>
+      <h1> </h1>
+    <button type="button" (click)="sideBar = false" pButton icon="pi pi-plus" label="Cadastrar Produto" routerLink="/produtos"class="ui-button-success"></button>
+    <h1> </h1>
+    <button type="button" (click)="sideBar = false" pButton icon="pi pi-plus" label=" Realizar Venda" class="boxButton"></button>
+    <h1> </h1>
+    <button type="button" (click)="sideBar = false" pButton label="Listar clientes" class="ui-button-secondary"></button>
+    <h1> </h1>
+    <button type="button" (click)="sideBar = false" pButton label="Listar Produtos" class="ui-button-secondary"></button>
+  </div>
+  </div>
+</p-sidebar>
+
+<button type="button" (click)="sideBar = true"
+pButton icon="pi pi-bars" class="boxButton" ></button>
+
+<router-outlet></router-outlet>
