@@ -14,7 +14,7 @@ export class ClientesCadastroComponent implements OnInit {
 
 cliente = new Clientes();
 
-tipo: { name: string; code: number; }[];
+tipos:SelectItem[];
 
     constructor(
     private service: ClientesService,
@@ -22,10 +22,11 @@ tipo: { name: string; code: number; }[];
     private rota: ActivatedRoute
 
   ) {
-    this.tipo = [
-      {name: 'Sem receita', code: 1},
-      {name: 'Com receita', code: 2}
-  ];
+
+  this.tipos = [
+    {label: 'Sem receita', value: 1},
+    {label: 'Com receita', value: 2}
+];
 
 }
   ngOnInit() {

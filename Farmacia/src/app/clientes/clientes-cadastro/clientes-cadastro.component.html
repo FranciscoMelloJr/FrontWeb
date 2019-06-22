@@ -8,10 +8,10 @@
     <label for="float-input">Insira o nome</label>
   </span>
 
-  <div class="content-section implementation">
     <h3 class="first">Tipo do Cliente</h3>
-    <p-dropdown [options]="tipo" [(ngModel)]="cliente.tipo" placeholder="Selecione o tipo" optionLabel="name" [showClear]="true"></p-dropdown>
-  </div>
+    <p-dropdown [options]="tipos" [(ngModel)]="cliente.tipo" [style]="{'width':'150px'}"
+      placeholder="Selecione o tipo" optionLabel="label" [showClear]="true">
+    </p-dropdown>
 
   <h3></h3>
   <div>
