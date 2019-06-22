@@ -14,12 +14,7 @@ export class ClientesCadastroComponent implements OnInit {
 
 cliente = new Clientes();
 
-tipos: { name: string; code: number; }[];
-tipos2: SelectItem[];
-
-    items: SelectItem[];
-    item: string;
-    tipoSelecionado: number;
+tipo: { name: string; code: number; }[];
 
     constructor(
     private service: ClientesService,
@@ -27,9 +22,9 @@ tipos2: SelectItem[];
     private rota: ActivatedRoute
 
   ) {
-    this.tipos = [
-      {name: 'Pessoa Fisica', code: 1},
-      {name: 'Pessoa Juridica', code: 2}
+    this.tipo = [
+      {name: 'Sem receita', code: 1},
+      {name: 'Com receita', code: 2}
   ];
 
 }
