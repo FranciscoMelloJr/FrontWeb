@@ -11,6 +11,9 @@ import {RouterModule} from '@angular/router'
 
 import { ClientesService } from './clientes.service';
 import { ClientesCadastroComponent } from './clientes-cadastro/clientes-cadastro.component';
+import { TableModule } from 'primeng/table';
+import { TooltipModule } from 'primeng/tooltip';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [ClientesCadastroComponent],
@@ -22,7 +25,10 @@ import { ClientesCadastroComponent } from './clientes-cadastro/clientes-cadastro
     RouterModule,
     InputTextModule,
     FormsModule,
-    CheckboxModule
+    CheckboxModule,
+    TooltipModule,
+    ConfirmDialogModule,
+    TableModule
   ],
   providers: [
     ClientesService

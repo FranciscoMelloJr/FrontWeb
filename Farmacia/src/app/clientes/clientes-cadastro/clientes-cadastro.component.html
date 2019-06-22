@@ -1,15 +1,21 @@
+<form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
 
-<h3>Nome do cliente</h3>
-<span class="ui-float-label">
+
+  <h3>Nome do cliente</h3>
+  <span class="ui-float-label">
     <input id="float-input" type="text" size="40" pInputText type="text" name="nome" [(ngModel)]="cliente.nome" #nome="ngModel" required minlength="3">
         <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
     <label for="float-input">Insira o nome</label>
-</span>
+  </span>
 
-<div class="content-section implementation">
-  <h3 class="first">Tipo do Cliente</h3>
-  <p-dropdown [options]="tipo" [(ngModel)]="cliente.tipo" placeholder="Selecione o tipo" optionLabel="name" [showClear]="true"></p-dropdown>
-</div>
+  <div class="content-section implementation">
+    <h3 class="first">Tipo do Cliente</h3>
+    <p-dropdown [options]="tipo" [(ngModel)]="cliente.tipo" placeholder="Selecione o tipo" optionLabel="name" [showClear]="true"></p-dropdown>
+  </div>
 
-<h3></h3>
-<button pButton type="submit" label="Adicionar" class="ui-button-rounded ui-button-success"></button>
+  <h3></h3>
+  <div>
+    <button pButton type="submit" label="Adicionar" [disabled]="f.invalid" class="ui-button-rounded ui-button-success"></button>
+    <button pButton type="button" label="Voltar" class="ui-button-rounded ui-button-secondary" routerLink ="/"></button>
+  </div>
+</form>
