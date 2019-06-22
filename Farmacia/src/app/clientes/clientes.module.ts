@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
-
+import {CheckboxModule} from 'primeng/checkbox';
 import {DropdownModule} from 'primeng/dropdown';
+
 import { ClientesService } from './clientes.service';
 import { ClientesCadastroComponent } from './clientes-cadastro/clientes-cadastro.component';
 
@@ -17,7 +18,8 @@ import { ClientesCadastroComponent } from './clientes-cadastro/clientes-cadastro
     ToastModule,
     ButtonModule,
     InputTextModule,
-    FormsModule
+    FormsModule,
+    CheckboxModule
   ],
   providers: [
     ClientesService
