@@ -1,3 +1,4 @@
+import { DropdownModule } from 'primeng/dropdown';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -5,7 +6,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import {CheckboxModule} from 'primeng/checkbox';
-import {DropdownModule} from 'primeng/dropdown';
+
+import {RouterModule} from '@angular/router'
 
 import { ClientesService } from './clientes.service';
 import { ClientesCadastroComponent } from './clientes-cadastro/clientes-cadastro.component';
@@ -17,6 +19,7 @@ import { ClientesCadastroComponent } from './clientes-cadastro/clientes-cadastro
     DropdownModule,
     ToastModule,
     ButtonModule,
+    RouterModule,
     InputTextModule,
     FormsModule,
     CheckboxModule
@@ -25,6 +28,7 @@ import { ClientesCadastroComponent } from './clientes-cadastro/clientes-cadastro
     ClientesService
   ],
   exports:[
+    RouterModule,
     ClientesCadastroComponent
   ]
 })

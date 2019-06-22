@@ -43,6 +43,9 @@ const rotas:Routes = [
     MessageService,
     ConfirmationService
   ],
+	exports: [
+		RouterModule
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

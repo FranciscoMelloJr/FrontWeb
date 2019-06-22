@@ -1,6 +1,6 @@
 import { ClientesService } from './../clientes.service';
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import { MessageService, SelectItem, SelectItemGroup } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Clientes } from '../model';
@@ -13,13 +13,75 @@ import { Clientes } from '../model';
 export class ClientesCadastroComponent implements OnInit {
 
 cliente = new Clientes();
+tipo: SelectItem[];
+clientes: Clientes[];
+selectedCity: Clientes;
+groupedCars: SelectItemGroup[];
 
-  constructor(
+    cars: SelectItem[];
+    selectedCar1: string;
+    selectedCar2: string = 'BMW';
+    selectedCar3: string;
+    items: SelectItem[];
+    item: string;
+  cities: { name: string; code: string; }[];
+
+    constructor(
     private service: ClientesService,
     private messageService: MessageService,
     private rota: ActivatedRoute
 
-  ) { }
+  ) {
+    this.cities = [
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+  ];
+
+  this.cars = [
+      {label: 'Audi', value: 'Audi'},
+      {label: 'BMW', value: 'BMW'},
+      {label: 'Fiat', value: 'Fiat'},
+      {label: 'Ford', value: 'Ford'},
+      {label: 'Honda', value: 'Honda'},
+      {label: 'Jaguar', value: 'Jaguar'},
+      {label: 'Mercedes', value: 'Mercedes'},
+      {label: 'Renault', value: 'Renault'},
+      {label: 'VW', value: 'VW'},
+      {label: 'Volvo', value: 'Volvo'}
+  ];
+
+  this.groupedCars = [
+      {
+          label: 'Germany', value: 'germany.png',
+          items: [
+              {label: 'Audi', value: 'Audi'},
+              {label: 'BMW', value: 'BMW'},
+              {label: 'Mercedes', value: 'Mercedes'},
+              {label: 'Murcia', value: 'Murcia'}
+          ]
+      },
+      {
+          label: 'USA', value: 'usa.png',
+          items: [
+              {label: 'Cadillac', value: 'Cadillac'},
+              {label: 'Ford', value: 'Ford'},
+              {label: 'GMC', value: 'GMC'}
+          ]
+      },
+      {
+          label: 'Japan', value: 'japan.png',
+          items: [
+              {label: 'Honda', value: 'Honda'},
+              {label: 'Mazda', value: 'Mazda'},
+              {label: 'Toyota', value: 'Toyota'}
+          ]
+      }
+  ];
+}
+
 
   ngOnInit() {
     const codigoCliente = this.rota.snapshot.params['id'];
