@@ -6,6 +6,7 @@ import { ProdutosService } from './produtos.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PickListModule } from 'primeng/picklist';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 import { ProdutosCadastroComponent } from './produtos-cadastro/produtos-cadastro.component';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { ProdutosCadastroComponent } from './produtos-cadastro/produtos-cadastro
     FormsModule,
     ToastModule,
     InputTextModule,
+    CurrencyMaskModule,
     PickListModule,
     ButtonModule
   ],
