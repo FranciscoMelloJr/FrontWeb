@@ -1,6 +1,6 @@
 import { ClientesService } from './../clientes.service';
 import { Component, OnInit } from '@angular/core';
-import { MessageService, SelectItem, SelectItemGroup } from 'primeng/api';
+import { MessageService} from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Clientes } from '../model';
@@ -14,21 +14,13 @@ export class ClientesCadastroComponent implements OnInit {
 
 cliente = new Clientes();
 
-tipos:SelectItem[];
-
     constructor(
     private service: ClientesService,
     private messageService: MessageService,
     private rota: ActivatedRoute
 
-  ) {
+  ) {}
 
-  this.tipos = [
-    {label: 'Sem receita', value: 1},
-    {label: 'Com receita', value: 2}
-];
-
-}
   ngOnInit() {
     const codigoCliente = this.rota.snapshot.params['id'];
     if(codigoCliente){

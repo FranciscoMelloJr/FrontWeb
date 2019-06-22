@@ -1,6 +1,6 @@
 export class Clientes{
   id: number;
   nome: string;
-  saldoDevedor: number;
+  saldoDevedor:number;
   tipo:number;
 }
