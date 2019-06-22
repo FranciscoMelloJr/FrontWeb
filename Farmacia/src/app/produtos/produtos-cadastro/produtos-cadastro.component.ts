@@ -10,7 +10,7 @@ import { ProdutosService } from '../produtos.service';
   templateUrl: './produtos-cadastro.component.html',
   styleUrls: ['./produtos-cadastro.component.css']
 })
-export class ProdutosCadastroComponent  {
+export class ProdutosCadastroComponent implements OnInit {
 
   produto = new Produto();
 
@@ -20,7 +20,15 @@ export class ProdutosCadastroComponent  {
     private rota: ActivatedRoute,
   ) { }
 
-  salvar(form: FormControl) {
+  ngOnInit() {
+
+    const codigoProduto = this.rota.snapshot.params['id'];
+    if(codigoProduto){
+      this.carregarProduto(codigoProduto);
+    }
+  }
+
+  inserir(form: FormControl) {
     this.service.adicionar(this.produto)
     .then( ()=>{
       this.messageService.add({severity:'success', summary:'Cadastro', detail:'Produto '+this.produto.nome+' cadastrado'});
@@ -28,4 +36,31 @@ export class ProdutosCadastroComponent  {
     });
   }
 
+    carregarProduto(id:number){
+      this.service.buscarPorCodigo(id)
+        .then((data) => {
+          this.produto = data;
+        }
+      );
+    }
+
+    alterar(form: FormControl) {
+      this.service.alterar(this.produto)
+      .then( ()=>{
+        this.messageService.add({severity:'success', summary:'Edição', detail:'Produto '+this.produto.nome+' alterado'});
+        form.reset();
+      });
+    }
+
+    salvar(form: FormControl) {
+      if(this.editando){
+        this.alterar(form);
+      }else{
+        this.inserir(form);
+      }
+    }
+
+  get editando(){
+    return Boolean(this.produto.id);
+  }
 }

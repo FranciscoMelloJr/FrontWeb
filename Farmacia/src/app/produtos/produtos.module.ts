@@ -1,3 +1,6 @@
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { TooltipModule } from 'primeng/tooltip';
+import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
@@ -8,17 +11,24 @@ import { CommonModule } from '@angular/common';
 import { PickListModule } from 'primeng/picklist';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { ProdutosCadastroComponent } from './produtos-cadastro/produtos-cadastro.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ProdutosCadastroComponent],
   imports: [
     CommonModule,
-    FormsModule,
-    ToastModule,
     InputTextModule,
+    ButtonModule,
+    BrowserModule,
+    TableModule,
+    TooltipModule,
+    ToastModule,
+    ConfirmDialogModule,
+    FormsModule,
     CurrencyMaskModule,
     PickListModule,
-    ButtonModule
+    RouterModule
   ],
   exports:[
     ProdutosCadastroComponent

@@ -13,18 +13,13 @@ import { Clientes } from '../model';
 export class ClientesCadastroComponent implements OnInit {
 
 cliente = new Clientes();
-tipo: SelectItem[];
-clientes: Clientes[];
-selectedCity: Clientes;
-groupedCars: SelectItemGroup[];
 
-    cars: SelectItem[];
-    selectedCar1: string;
-    selectedCar2: string = 'BMW';
-    selectedCar3: string;
+tipos: { name: string; code: number; }[];
+tipos2: SelectItem[];
+
     items: SelectItem[];
     item: string;
-  cities: { name: string; code: string; }[];
+    tipoSelecionado: number;
 
     constructor(
     private service: ClientesService,
@@ -32,57 +27,12 @@ groupedCars: SelectItemGroup[];
     private rota: ActivatedRoute
 
   ) {
-    this.cities = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
+    this.tipos = [
+      {name: 'Pessoa Fisica', code: 1},
+      {name: 'Pessoa Juridica', code: 2}
   ];
 
-  this.cars = [
-      {label: 'Audi', value: 'Audi'},
-      {label: 'BMW', value: 'BMW'},
-      {label: 'Fiat', value: 'Fiat'},
-      {label: 'Ford', value: 'Ford'},
-      {label: 'Honda', value: 'Honda'},
-      {label: 'Jaguar', value: 'Jaguar'},
-      {label: 'Mercedes', value: 'Mercedes'},
-      {label: 'Renault', value: 'Renault'},
-      {label: 'VW', value: 'VW'},
-      {label: 'Volvo', value: 'Volvo'}
-  ];
-
-  this.groupedCars = [
-      {
-          label: 'Germany', value: 'germany.png',
-          items: [
-              {label: 'Audi', value: 'Audi'},
-              {label: 'BMW', value: 'BMW'},
-              {label: 'Mercedes', value: 'Mercedes'},
-              {label: 'Murcia', value: 'Murcia'}
-          ]
-      },
-      {
-          label: 'USA', value: 'usa.png',
-          items: [
-              {label: 'Cadillac', value: 'Cadillac'},
-              {label: 'Ford', value: 'Ford'},
-              {label: 'GMC', value: 'GMC'}
-          ]
-      },
-      {
-          label: 'Japan', value: 'japan.png',
-          items: [
-              {label: 'Honda', value: 'Honda'},
-              {label: 'Mazda', value: 'Mazda'},
-              {label: 'Toyota', value: 'Toyota'}
-          ]
-      }
-  ];
 }
-
-
   ngOnInit() {
     const codigoCliente = this.rota.snapshot.params['id'];
     if(codigoCliente){
