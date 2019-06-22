@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Produto } from './../model';
-import { ProdutosService } from '../produtos.service';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { FormControl } from '@angular/forms';
+import { Produto } from './../model';
+import { Component, OnInit } from '@angular/core';
+import { ProdutosService } from '../produtos.service';
 
 @Component({
   selector: 'app-produtos-cadastro',
