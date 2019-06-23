@@ -27,8 +27,8 @@ import { ProdutosModule } from './produtos/produtos.module';
 const rotas: Routes = [
   {path: '', redirectTo:'categorias', pathMatch:'full'},
   {path: 'cidades', component: CidadesCadastroComponent},
-  {path: 'categorias', component: CategoriasPesquisaComponent},
   {path: 'produtos', component: ProdutosCadastroComponent},
+  {path: 'categorias', component: CategoriasPesquisaComponent},
   {path: 'categorias/novo', component: CategoriasCadastroComponent},
   {path: 'categorias/:id', component: CategoriasCadastroComponent},
   { path: 'estados', component: EstadosPesquisaComponent },

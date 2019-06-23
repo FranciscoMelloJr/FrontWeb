@@ -14,6 +14,7 @@ import { ProdutosCadastroComponent } from './produtos-cadastro/produtos-cadastro
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ProdutosListagemComponent } from './produtos-listagem/produtos-listagem.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [ProdutosCadastroComponent, ProdutosListagemComponent],
@@ -22,6 +23,7 @@ import { ProdutosListagemComponent } from './produtos-listagem/produtos-listagem
     InputTextModule,
     ButtonModule,
     BrowserModule,
+    BrowserAnimationsModule,
     TableModule,
     TooltipModule,
     ToastModule,
@@ -32,7 +34,8 @@ import { ProdutosListagemComponent } from './produtos-listagem/produtos-listagem
     RouterModule
   ],
   exports: [
-    ProdutosCadastroComponent
+    ProdutosCadastroComponent,
+    ProdutosListagemComponent
   ],
   providers: [
     ProdutosService

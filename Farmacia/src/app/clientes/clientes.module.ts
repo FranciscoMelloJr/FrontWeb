@@ -12,9 +12,10 @@ import { ClientesCadastroComponent } from './clientes-cadastro/clientes-cadastro
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ClientesListagemComponent } from './clientes-listagem/clientes-listagem.component';
 
 @NgModule({
-  declarations: [ClientesCadastroComponent],
+  declarations: [ClientesCadastroComponent, ClientesListagemComponent],
   imports: [
     CommonModule,
     DropdownModule,
@@ -28,12 +29,12 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     ConfirmDialogModule,
     TableModule
   ],
+  exports: [
+    ClientesCadastroComponent,
+    ClientesListagemComponent
+  ],
   providers: [
     ClientesService
-  ],
-  exports: [
-    RouterModule,
-    ClientesCadastroComponent
   ]
 })
 export class ClientesModule { }
