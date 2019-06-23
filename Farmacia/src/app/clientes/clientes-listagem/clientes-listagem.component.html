@@ -28,13 +28,15 @@
         <tr>
           <th class="col-id-header">Id</th>
           <th>Clientes</th>
-          <th class="col-acoes"></th>
+          <th class="col-acoes">Saldo Devedor</th>
+          <th class="col-acoes">Menu</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-cliente>
         <tr>
           <td class="col-id">{{cliente.id}}</td>
           <td>{{cliente.nome}}</td>
+          <td class="col-id">R${{cliente.saldoDevedor}}</td>
           <td class="col-acoes">
             <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" showDelay="125"
               class="ui-button-info" [routerLink]="['/clientes',cliente.id]"></button>
