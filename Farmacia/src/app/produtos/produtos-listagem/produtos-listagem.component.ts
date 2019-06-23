@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ProdutosService } from '../produtos.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-produtos-listagem',
@@ -17,7 +16,6 @@ export class ProdutosListagemComponent implements OnInit {
     private service: ProdutosService,
     private messageService: MessageService,
     private conf: ConfirmationService,
-    private rota: ActivatedRoute
   ) { }
 
   ngOnInit() {
