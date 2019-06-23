@@ -27,6 +27,7 @@ export class ClientesCadastroComponent implements OnInit {
       this.carregarCliente(codigoCliente)
     }
   }
+
   carregarCliente(id: number) {
     this.service.buscarPorCodigo(id)
       .then((data) => {
