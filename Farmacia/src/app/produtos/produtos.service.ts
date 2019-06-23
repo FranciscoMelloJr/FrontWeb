@@ -20,8 +20,8 @@ export class ProdutosService {
     return this.http.get<any>(this.produtosURLFiltro).toPromise();
   }
 
-  adicionar(produto: Produto): Promise<any> {
-    return this.http.post(this.produtosURL, produto).toPromise();
+  listarProduto(): Promise<any> {
+    return this.http.get<any>('http://localhost:8080/produtos').toPromise();
   }
 
   buscarPorCodigo(codigo: number): Promise<Produto> {
@@ -32,11 +32,16 @@ export class ProdutosService {
     return this.http.get<any>(this.produtosURL + '?nome=' + nome).toPromise();
   }
 
+  alterar(produto: Produto): Promise<any> {
+    return this.http.put(this.produtosURL + '/' + produto.id, produto).toPromise();
+  }
+
+  adicionar(produto: Produto): Promise<any> {
+    return this.http.post(this.produtosURL, produto).toPromise();
+  }
+
   excluir(id: number): Promise<void> {
     return this.http.delete(this.produtosURL + '/' + id).toPromise().then(() => null);
   }
 
-  alterar(produto: Produto): Promise<any> {
-    return this.http.put(this.produtosURL + '/' + produto.id, produto).toPromise();
-  }
 }

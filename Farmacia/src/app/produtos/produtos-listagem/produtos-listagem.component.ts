@@ -10,7 +10,7 @@ import { ProdutosService } from '../produtos.service';
 export class ProdutosListagemComponent implements OnInit {
 
   produtos = [];
-  filtro: string;
+  private filtro: string;
 
   constructor(
     private service: ProdutosService,
