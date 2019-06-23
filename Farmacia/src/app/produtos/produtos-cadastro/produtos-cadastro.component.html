@@ -1,54 +1,46 @@
 <p-toast></p-toast>
-
-<div class="container">
-
   <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
     <div class="ui-g">
-
       <div class="ui-g-12">
         <h1>Novo Produto</h1>
       </div>
-
-      <div class="ui-g-12 ui-md-10 ui-fluid">
-        <label>Nome</label>
+      <div class="ui-g-12">
+        <h3>Nome</h3>
+        <span class="ui-float-label">
         <input pInputText type="text" name="nome" [(ngModel)]="produto.nome" #nome="ngModel" required minlength="3">
-        <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+        <label for="float-input">Insira o nome</label>
         <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+      </span>
       </div>
-
-      <div class="ui-g-12 ui-md-5 ui-fluid">
-          <label>Estoque</label>
-          <input pInputText type="text" name="estoque" [(ngModel)]="produto.estoque" #nome="ngModel">
-          <div *ngIf="nome.hasError('required') && nome.touched">Informe um estoque</div>
-          <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 1 caractar</div>
+      <div class="ui-g-12">
+          <h3>Estoque</h3>
+          <span class="ui-float-label">
+          <input pInputText type="text" name="estoque" [(ngModel)]="produto.estoque" #estoque="ngModel">
+          <label for="float-input">Quantidade</label>
+          <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 1 caracter</div>
+        </span>
         </div>
-
-      <div class="ui-g-12 ui-md-5 ui-fluid">
-        <label>Preço</label>
-        <input pInputText type="text" name="valor" [(ngModel)]="produto.valor" #nome="ngModel" required
+        <div class="ui-g-12">
+        <h3>Valor</h3>
+        <span class="ui-float-label">
+        <input pInputText type="text" name="valor" [(ngModel)]="produto.valor" #valor="ngModel" required
         currencyMask
         [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' , align:'left'}">
+        <label for="float-input">R$</label>
         <div *ngIf="nome.hasError('required') && nome.touched">Informe um valor</div>
+      </span>
       </div>
-
-      <div class="ui-g-12 ui-md-10 ui-fluid">
-        <p-pickList [source]="categorias" [target]="produto.categorias"
-        sourceHeader="Categorias" targetHeader="Selecionadas"
-        [responsive]="true"  [dragdrop]="true"
-        [showSourceControls]="false" [showTargetControls]="false">
-          <ng-template let-cat pTemplate="item">
-              <div class="ui-helper-clearfix">
-                  <div style="font-size:12px;float:right;margin:5px 5px 0 0">{{cat.nome}}</div>
-              </div>
-          </ng-template>
-      </p-pickList>
-      </div>
-
       <div class="ui-g-12">
-        <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+          <h3>Tarja Preta</h3>
+      <span class="ui-float-label">
+          <input id="float-input" type="text" size="40" pInputText type="text" name="tarja" [(ngModel)]="produto.tarja" #tarja="ngModel" required maxlength="1">
+              <div *ngIf="nome.hasError('maxlength')">Insira o valor correspondente</div>
+          <label for="float-input">Não = 1 Sim = 2</label>
+        </span>
       </div>
-
+      <div class="ui-g-12">
+          <button pButton type="submit" label="Adicionar" [disabled]="f.invalid" class="ui-button-rounded ui-button-success"></button>
+          <button pButton type="button" label="Voltar" class="ui-button-rounded ui-button-secondary" routerLink ="/"></button>
+        </div>
     </div>
   </form>
-
-</div>
