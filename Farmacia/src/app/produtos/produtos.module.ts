@@ -13,9 +13,10 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
 import { ProdutosCadastroComponent } from './produtos-cadastro/produtos-cadastro.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { ProdutosListagemComponent } from './produtos-listagem/produtos-listagem.component';
 
 @NgModule({
-  declarations: [ProdutosCadastroComponent],
+  declarations: [ProdutosCadastroComponent, ProdutosListagemComponent],
   imports: [
     CommonModule,
     InputTextModule,

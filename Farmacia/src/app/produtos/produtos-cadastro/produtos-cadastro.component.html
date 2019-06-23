@@ -15,9 +15,8 @@
       <div class="ui-g-12">
           <h3>Estoque</h3>
           <span class="ui-float-label">
-          <input pInputText type="text" name="estoque" [(ngModel)]="produto.estoque" #estoque="ngModel">
+          <input pInputText type="text" name="estoque" [(ngModel)]="produto.estoque" #estoque="ngModel" required minlength="1">
           <label for="float-input">Quantidade</label>
-          <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 1 caracter</div>
         </span>
         </div>
         <div class="ui-g-12">
@@ -27,7 +26,6 @@
         currencyMask
         [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' , align:'left'}">
         <label for="float-input">R$</label>
-        <div *ngIf="nome.hasError('required') && nome.touched">Informe um valor</div>
       </span>
       </div>
       <div class="ui-g-12">
