@@ -14,7 +14,7 @@ export class ProdutosListagemComponent implements OnInit {
   filtro: string;
 
   constructor(
-    private service:ProdutosService,
+    private service: ProdutosService,
     private messageService: MessageService,
     private conf: ConfirmationService,
     private rota: ActivatedRoute
@@ -24,11 +24,11 @@ export class ProdutosListagemComponent implements OnInit {
     this.pesquisar();
   }
 
-  pesquisar(){
-    this.service.pesquisar({nome:this.filtro})
-    .then((dados)=>{
-      this.produtos=dados;
-    });
+  pesquisar() {
+    this.service.pesquisar({ nome: this.filtro })
+      .then((dados) => {
+        this.produtos = dados;
+      });
   }
 
   filtrarProduto(produto: string) {
@@ -37,28 +37,28 @@ export class ProdutosListagemComponent implements OnInit {
     });
   }
 
-  confirmarExclusao(produto:any){
+  confirmarExclusao(produto: any) {
     this.conf.confirm({
-      message: 'Tem certeza que deseja excluir '+produto.nome+'?',
+      message: 'Tem certeza que deseja excluir ' + produto.nome + '?',
       accept: () => {
         this.excluir(produto);
       }
     });
   }
 
-  excluir(produto: any){
+  excluir(produto: any) {
     this.service.excluir(produto.id)
-    .then(()=>{
-      this.pesquisar();
-      this.messageService.add({severity:'success', summary:'Exclusão', detail:'Produto '+produto.nome+' excluído com sucesso'});
-    });
+      .then(() => {
+        this.pesquisar();
+        this.messageService.add({ severity: 'success', summary: 'Exclusão', detail: 'Produto ' + produto.nome + ' excluído com sucesso' });
+      });
   }
 
-  alterar(produto:any) {
+  alterar(produto: any) {
     this.service.alterar(produto.id)
-    .then( ()=>{
-      this.messageService.add({severity:'success', summary:'Edição', detail:'Produto '+produto.nome+' alterado'});
-    });
+      .then(() => {
+        this.messageService.add({ severity: 'success', summary: 'Edição', detail: 'Produto ' + produto.nome + ' alterado' });
+      });
   }
 
 }

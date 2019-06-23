@@ -1,21 +1,25 @@
 <p-sidebar [(visible)]="sideBar" [style]="{width:'15em'}">
   <div class="ui-g">
     <div class="ui-g-12 ui-fluid">
-    <h1 class="boxButton">Farmácia</h1>
-    <button type="button" (click)="sideBar = false" pButton icon="pi pi-plus" label="Cadastrar Cliente" routerLink="/clientes" class="ui-button-success"></button>
+      <h1 class="boxButton">Farmácia</h1>
+      <button type="button" (click)="sideBar = false" pButton icon="pi pi-plus" label="Cadastrar Cliente"
+        routerLink="/clientes" class="ui-button-success"></button>
       <h1> </h1>
-    <button type="button" (click)="sideBar = false" pButton icon="pi pi-plus" label="Cadastrar Produto" routerLink="/produtos" class="ui-button-success"></button>
-    <h1> </h1>
-    <button type="button" (click)="sideBar = false" pButton icon="pi pi-plus" label=" Realizar Venda"  routerLink="/vendas" class="boxButton"></button>
-    <h1> </h1>
-    <button type="button" (click)="sideBar = false" pButton label="Listar clientes" routerLink="/clientes/listagem" class="ui-button-secondary"></button>
-    <h1> </h1>
-    <button type="button" (click)="sideBar = false" pButton label="Listar Produtos" routerLink="/produtos/listagem" class="ui-button-secondary"></button>
-  </div>
+      <button type="button" (click)="sideBar = false" pButton icon="pi pi-plus" label="Cadastrar Produto"
+        routerLink="/produtos" class="ui-button-success"></button>
+      <h1> </h1>
+      <button type="button" (click)="sideBar = false" pButton icon="pi pi-plus" label=" Realizar Venda"
+        routerLink="/vendas" class="boxButton"></button>
+      <h1> </h1>
+      <button type="button" (click)="sideBar = false" pButton label="Listar clientes" routerLink="/clientes/listagem"
+        class="ui-button-secondary"></button>
+      <h1> </h1>
+      <button type="button" (click)="sideBar = false" pButton label="Listar Produtos" routerLink="/produtos/listagem"
+        class="ui-button-secondary"></button>
+    </div>
   </div>
 </p-sidebar>
 
-<button type="button" (click)="sideBar = true"
-pButton icon="pi pi-bars" class="boxButton" ></button>
+<button type="button" (click)="sideBar = true" pButton icon="pi pi-bars" class="boxButton"></button>
 
 <router-outlet></router-outlet>

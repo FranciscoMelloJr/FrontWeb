@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
-import {CheckboxModule} from 'primeng/checkbox';
+import { CheckboxModule } from 'primeng/checkbox';
 
-import {RouterModule} from '@angular/router'
+import { RouterModule } from '@angular/router'
 
 import { ClientesService } from './clientes.service';
 import { ClientesCadastroComponent } from './clientes-cadastro/clientes-cadastro.component';
@@ -33,7 +33,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
   providers: [
     ClientesService
   ],
-  exports:[
+  exports: [
     RouterModule,
     ClientesCadastroComponent
   ]

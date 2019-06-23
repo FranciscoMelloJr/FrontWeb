@@ -31,10 +31,10 @@ import { ProdutosListagemComponent } from './produtos-listagem/produtos-listagem
     PickListModule,
     RouterModule
   ],
-  exports:[
+  exports: [
     ProdutosCadastroComponent
   ],
-  providers:[
+  providers: [
     ProdutosService
   ]
 })

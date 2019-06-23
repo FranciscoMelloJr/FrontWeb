@@ -1,4 +1,4 @@
-import {ButtonModule} from 'primeng/button';
+import { ButtonModule } from 'primeng/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,13 +14,13 @@ import { ProdutosModule } from './produtos/produtos.module';
 import { ClientesCadastroComponent } from './clientes/clientes-cadastro/clientes-cadastro.component';
 import { ProdutosCadastroComponent } from './produtos/produtos-cadastro/produtos-cadastro.component';
 
-import {SidebarModule} from 'primeng/sidebar';
+import { SidebarModule } from 'primeng/sidebar';
 
 
 
-const rotas:Routes = [
-{path: 'clientes',component:ClientesCadastroComponent},
-{path: 'produtos',component:ProdutosCadastroComponent}
+const rotas: Routes = [
+  { path: 'clientes', component: ClientesCadastroComponent },
+  { path: 'produtos', component: ProdutosCadastroComponent }
 
 ];
 
@@ -43,9 +43,9 @@ const rotas:Routes = [
     MessageService,
     ConfirmationService
   ],
-	exports: [
-		RouterModule
-	],
+  exports: [
+    RouterModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

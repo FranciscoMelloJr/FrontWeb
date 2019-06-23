@@ -11,32 +11,32 @@ export class ProdutosService {
   produtosURLFiltro = this.produtosURL;
   constructor(private http: HttpClient) { }
 
-  pesquisar(filtro: any):Promise<any>{
-    if(filtro.nome){
-      this.produtosURLFiltro = this.produtosURL+'/filtro?nome='+filtro.nome;
-    }else{
+  pesquisar(filtro: any): Promise<any> {
+    if (filtro.nome) {
+      this.produtosURLFiltro = this.produtosURL + '/filtro?nome=' + filtro.nome;
+    } else {
       this.produtosURLFiltro = this.produtosURL;
     }
     return this.http.get<any>(this.produtosURLFiltro).toPromise();
   }
 
-  adicionar(produto: Produto): Promise<any>{
+  adicionar(produto: Produto): Promise<any> {
     return this.http.post(this.produtosURL, produto).toPromise();
   }
 
   buscarPorCodigo(codigo: number): Promise<Produto> {
-  return this.http.get<Produto>(this.produtosURL+'/'+codigo).toPromise();
+    return this.http.get<Produto>(this.produtosURL + '/' + codigo).toPromise();
   }
 
   listarPorNome(nome: string): Promise<any> {
-  return this.http.get<any>(this.produtosURL + '?nome=' + nome).toPromise();
+    return this.http.get<any>(this.produtosURL + '?nome=' + nome).toPromise();
   }
 
-  excluir(id:number):Promise<void>{
-  return this.http.delete(this.produtosURL+'/'+id).toPromise().then(() => null);
+  excluir(id: number): Promise<void> {
+    return this.http.delete(this.produtosURL + '/' + id).toPromise().then(() => null);
   }
 
-  alterar(produto: Produto): Promise<any>{
-  return this.http.put(this.produtosURL+'/'+produto.id, produto).toPromise();
+  alterar(produto: Produto): Promise<any> {
+    return this.http.put(this.produtosURL + '/' + produto.id, produto).toPromise();
   }
 }

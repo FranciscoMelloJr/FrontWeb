@@ -23,44 +23,44 @@ export class ProdutosCadastroComponent implements OnInit {
   ngOnInit() {
 
     const codigoProduto = this.rota.snapshot.params['id'];
-    if(codigoProduto){
+    if (codigoProduto) {
       this.carregarProduto(codigoProduto);
     }
   }
 
   inserir(form: FormControl) {
     this.service.adicionar(this.produto)
-    .then( ()=>{
-      this.messageService.add({severity:'success', summary:'Cadastro', detail:'Produto '+this.produto.nome+' cadastrado'});
-      form.reset();
-    });
-  }
-
-    carregarProduto(id:number){
-      this.service.buscarPorCodigo(id)
-        .then((data) => {
-          this.produto = data;
-        }
-      );
-    }
-
-    alterar(form: FormControl) {
-      this.service.alterar(this.produto)
-      .then( ()=>{
-        this.messageService.add({severity:'success', summary:'Edição', detail:'Produto '+this.produto.nome+' alterado'});
+      .then(() => {
+        this.messageService.add({ severity: 'success', summary: 'Cadastro', detail: 'Produto ' + this.produto.nome + ' cadastrado' });
         form.reset();
       });
-    }
+  }
 
-    salvar(form: FormControl) {
-      if(this.editando){
-        this.alterar(form);
-      }else{
-        this.inserir(form);
+  carregarProduto(id: number) {
+    this.service.buscarPorCodigo(id)
+      .then((data) => {
+        this.produto = data;
       }
-    }
+      );
+  }
 
-  get editando(){
+  alterar(form: FormControl) {
+    this.service.alterar(this.produto)
+      .then(() => {
+        this.messageService.add({ severity: 'success', summary: 'Edição', detail: 'Produto ' + this.produto.nome + ' alterado' });
+        form.reset();
+      });
+  }
+
+  salvar(form: FormControl) {
+    if (this.editando) {
+      this.alterar(form);
+    } else {
+      this.inserir(form);
+    }
+  }
+
+  get editando() {
     return Boolean(this.produto.id);
   }
 }
