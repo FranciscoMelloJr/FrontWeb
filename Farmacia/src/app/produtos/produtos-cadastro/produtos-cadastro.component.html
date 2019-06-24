@@ -31,11 +31,10 @@
     <div class="ui-g-12">
       <h3>Tarja Preta</h3>
       <span class="ui-float-label">
-        <input id="float-input" type="text" size="40" pInputText type="text" name="tarja" [(ngModel)]="produto.tarja"
-          #tarja="ngModel" required maxlength="1">
-        <div *ngIf="nome.hasError('maxlength')">Insira o valor correspondente</div>
-        <label for="float-input">Não = 1 Sim = 2</label>
-      </span>
+          <input id="float-input" type="text" size="40" pInputText type="text" name="tarja" [(ngModel)]="produto.tarja"
+            #tarja="ngModel" >
+          <label for="float-input">{{editando?'Impossível alterar': 'Não = 1 Sim = 2'}} </label>
+        </span>
     </div>
     <div class="ui-g-12">
       <button pButton type="submit" label="Adicionar" [disabled]="f.invalid"

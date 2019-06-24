@@ -17,12 +17,10 @@
       <h3>Possuí receita ?</h3>
       <span class="ui-float-label">
         <input id="float-input" type="text" size="40" pInputText type="text" name="tipo" [(ngModel)]="cliente.tipo"
-          #tipo="ngModel" required maxlength="1">
-        <div *ngIf="nome.hasError('maxlength')">Insira o valor correspondente</div>
-        <label for="float-input">Não = 1 Sim = 2</label>
+          #tipo="ngModel" >
+        <label for="float-input">{{editando?'Impossível alterar': 'Não = 1 Sim = 2'}} </label>
       </span>
     </div>
-    <h3></h3>
     <div class="ui-g-12">
       <button pButton type="submit" label="Adicionar" [disabled]="f.invalid"
         class="ui-button-rounded ui-button-success"></button>

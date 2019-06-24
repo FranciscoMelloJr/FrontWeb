@@ -17,17 +17,17 @@ import { ClientesListagemComponent } from './clientes-listagem/clientes-listagem
 @NgModule({
   declarations: [ClientesCadastroComponent, ClientesListagemComponent],
   imports: [
-    CommonModule,
-    DropdownModule,
-    ToastModule,
     ButtonModule,
-    RouterModule,
-    InputTextModule,
-    FormsModule,
     CheckboxModule,
-    TooltipModule,
+    CommonModule,
     ConfirmDialogModule,
-    TableModule
+    DropdownModule,
+    FormsModule,
+    InputTextModule,
+    RouterModule,
+    TableModule,
+    ToastModule,
+    TooltipModule
   ],
   exports: [
     ClientesCadastroComponent,

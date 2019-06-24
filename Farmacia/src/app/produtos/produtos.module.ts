@@ -15,23 +15,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ProdutosListagemComponent } from './produtos-listagem/produtos-listagem.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [ProdutosCadastroComponent, ProdutosListagemComponent],
   imports: [
-    CommonModule,
-    InputTextModule,
     ButtonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    TableModule,
-    TooltipModule,
-    ToastModule,
+    CheckboxModule,
+    CommonModule,
     ConfirmDialogModule,
-    FormsModule,
     CurrencyMaskModule,
+    DropdownModule,
+    FormsModule,
+    InputTextModule,
     PickListModule,
-    RouterModule
+    RouterModule,
+    TableModule,
+    ToastModule,
+    TooltipModule
   ],
   exports: [
     ProdutosCadastroComponent,
