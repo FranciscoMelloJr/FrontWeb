@@ -17,7 +17,7 @@ export class ProdutosCadastroComponent implements OnInit {
   constructor(
     private service: ProdutosService,
     private messageService: MessageService,
-    private rota: ActivatedRoute,
+    private rota: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -28,20 +28,20 @@ export class ProdutosCadastroComponent implements OnInit {
     }
   }
 
-  inserir(form: FormControl) {
-    this.service.adicionar(this.produto)
-      .then(() => {
-        this.messageService.add({ severity: 'success', summary: 'Cadastro', detail: 'Produto ' + this.produto.nome + ' cadastrado' });
-        form.reset();
-      });
-  }
-
   carregarProduto(id: number) {
     this.service.buscarPorCodigo(id)
       .then((data) => {
         this.produto = data;
       }
       );
+  }
+
+  inserir(form: FormControl) {
+    this.service.adicionar(this.produto)
+      .then(() => {
+        this.messageService.add({ severity: 'success', summary: 'Cadastro', detail: 'Produto ' + this.produto.nome + ' cadastrado' });
+        form.reset();
+      });
   }
 
   alterar(form: FormControl) {

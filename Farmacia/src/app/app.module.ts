@@ -19,10 +19,10 @@ import { ProdutosListagemComponent } from './produtos/produtos-listagem/produtos
 const rotas: Routes = [
   { path: 'produtos', component: ProdutosCadastroComponent },
   { path: 'produtos/listagem', component: ProdutosListagemComponent },
-  { path: 'produtos/:id', component: ProdutosListagemComponent },
+  { path: 'produtos/:id', component: ProdutosCadastroComponent },
   { path: 'clientes', component: ClientesCadastroComponent },
   { path: 'clientes/listagem', component: ClientesListagemComponent },
-  { path: 'clientes/:id', component: ClientesListagemComponent },
+  { path: 'clientes/:id', component: ClientesCadastroComponent },
 ];
 
 @NgModule({

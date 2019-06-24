@@ -2,7 +2,7 @@
 <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
   <div class="ui-g">
     <div class="ui-g-12">
-      <h1>Novo Produto</h1>
+      <h1>{{editando?'Edicão de ': 'Novo '}} Produto</h1>
     </div>
     <div class="ui-g-12">
       <h3>Nome</h3>
@@ -40,8 +40,8 @@
     <div class="ui-g-12">
       <button pButton type="submit" label="Adicionar" [disabled]="f.invalid"
         class="ui-button-rounded ui-button-success"></button>
-      <button pButton type="button" label="Voltar" class="ui-button-rounded ui-button-secondary"
-        routerLink="/"></button>
+      <button routerLink="/produtos/listagem" pButton type="button" label="Voltar"
+        class="ui-button-rounded ui-button-secondary"></button>
     </div>
   </div>
 </form>
