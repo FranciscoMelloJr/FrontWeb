@@ -18,49 +18,50 @@ export class CategoriasCadastroComponent implements OnInit {
     private service: CategoriasService,
     private messageService: MessageService,
     private rota: ActivatedRoute
+    //private rotaP: Router
   ) { }
-
+  //this.rotaP.navigate(['/categorias']);
 
   inserir(form: FormControl) {
     this.service.adicionar(this.categoria)
-    .then( ()=>{
-      this.messageService.add({severity:'success', summary:'Cadastro', detail:'Categoria '+this.categoria.nome+' cadastrada'});
-      form.reset();
-    });
+      .then(() => {
+        this.messageService.add({ severity: 'success', summary: 'Cadastro', detail: 'Categoria ' + this.categoria.nome + ' cadastrada' });
+        form.reset();
+      });
   }
 
   ngOnInit() {
     const codigoCategoria = this.rota.snapshot.params['id'];
-    if(codigoCategoria){
+    if (codigoCategoria) {
       this.carregarCategoria(codigoCategoria);
     }
   }
 
-  carregarCategoria(id:number){
+  carregarCategoria(id: number) {
     this.service.buscarPorCodigo(id)
       .then((data) => {
         this.categoria = data;
       }
-    );
+      );
   }
 
   alterar(form: FormControl) {
     this.service.alterar(this.categoria)
-    .then( ()=>{
-      this.messageService.add({severity:'success', summary:'Edição', detail:'Categoria '+this.categoria.nome+' alterada'});
-      form.reset();
-    });
+      .then(() => {
+        this.messageService.add({ severity: 'success', summary: 'Edição', detail: 'Categoria ' + this.categoria.nome + ' alterada' });
+        form.reset();
+      });
   }
 
   salvar(form: FormControl) {
-    if(this.editando){
+    if (this.editando) {
       this.alterar(form);
-    }else{
+    } else {
       this.inserir(form);
     }
   }
 
-  get editando(){
+  get editando() {
     return Boolean(this.categoria.id);
   }
 

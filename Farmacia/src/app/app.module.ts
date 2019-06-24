@@ -17,6 +17,7 @@ import { ClientesListagemComponent } from './clientes/clientes-listagem/clientes
 import { ProdutosListagemComponent } from './produtos/produtos-listagem/produtos-listagem.component';
 
 const rotas: Routes = [
+  {path: '', redirectTo:'produtos/listagem', pathMatch:'full'},
   { path: 'produtos', component: ProdutosCadastroComponent },
   { path: 'produtos/listagem', component: ProdutosListagemComponent },
   { path: 'produtos/:id', component: ProdutosCadastroComponent },
