@@ -1,3 +1,4 @@
+import { ProdutosService } from './../../produtos/produtos.service';
 import { ActivatedRoute } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { VendasService } from './../vendas.service';
@@ -16,19 +17,21 @@ export class VendasCadastroComponent implements OnInit {
   produtos: Produto[];
   cliente: Clientes[];
 
+
   constructor(
     private service: VendasService,
+    private ProdutosService: ProdutosService,
     private vendasService: VendasService,
     private messageService: MessageService,
     private rota: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.pesquisarVendas();
+    this.pesquisarProdutos();
   }
 
-  pesquisarVendas() {
-    this.vendasService.pesquisar()
+  pesquisarProdutos() {
+    this.ProdutosService.listarProduto()
       .then((dados) => {
         this.produtos = dados;
       });
