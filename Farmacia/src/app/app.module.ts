@@ -1,3 +1,4 @@
+import { VendasModule } from './vendas/vendas.module';
 import { ButtonModule } from 'primeng/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +16,7 @@ import { ProdutosCadastroComponent } from './produtos/produtos-cadastro/produtos
 import { ClientesListagemComponent } from './clientes/clientes-listagem/clientes-listagem.component';
 import { ProdutosListagemComponent } from './produtos/produtos-listagem/produtos-listagem.component';
 import { VendasCadastroComponent } from './vendas/vendas-cadastro/vendas-cadastro.component';
+
 
 const rotas: Routes = [
   {path: '', redirectTo:'produtos/listagem', pathMatch:'full'},
@@ -36,6 +38,7 @@ const rotas: Routes = [
     BrowserAnimationsModule,
     ProdutosModule,
     ClientesModule,
+    VendasModule,
     HttpClientModule,
     ToastModule,
     ButtonModule,
