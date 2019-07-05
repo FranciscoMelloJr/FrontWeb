@@ -14,37 +14,20 @@
       </div>
       <h4>Insira os produtos</h4>
       <div class="ui-g-12">
+          <div class="ui-g-6">
         <span class="ui-float-label">
-          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
+          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome1"
             [(ngModel)]="venda.produtos" #nome="ngModel">
           <label for="float-input">ID</label>
         </span>
+      </div>
+        <div class="ui-g-6">
         <span class="ui-float-label">
-            <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
-              [(ngModel)]="venda." #nome="ngModel">
+            <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="quantidade"
+              [(ngModel)]="venda.quantidade" #nome="ngModel">
             <label for="float-input">ID</label>
           </span>
-      </div>
-      <div class="ui-g-12">
-        <span class="ui-float-label">
-          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
-            [(ngModel)]="venda.produtos" #nome="ngModel">
-          <label for="float-input">ID</label>
-        </span>
-      </div>
-      <div class="ui-g-12">
-        <span class="ui-float-label">
-          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
-            [(ngModel)]="venda.produtos" #nome="ngModel">
-          <label for="float-input">ID</label>
-        </span>
-      </div>
-      <div class="ui-g-12">
-        <span class="ui-float-label">
-          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
-            [(ngModel)]="venda.produtos" #nome="ngModel">
-          <label for="float-input">ID</label>
-        </span>
+        </div>
       </div>
 
       <!--
@@ -65,6 +48,10 @@
       <div class="ui-g-12">
         <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
       </div>
+
+      <div class="ui-g-12">
+          <button pButton type="submit" label="Finalizar venda" [disabled]="f.invalid" class=" boxButton"></button>
+        </div>
 
     </div>
   </form>

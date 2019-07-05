@@ -1,26 +1,10 @@
 <p-toast></p-toast>
 <p-confirmDialog header="Confirmação" icon="pi pi-question-circle" acceptLabel="Sim" rejectLabel="Não">
 </p-confirmDialog>
-<div>
-  <form autocomplete="off" (ngSubmit)="pesquisar()">
-    <div class="ui-g">
-      <div class="ui-g-12">
-        <h1>
-          Clientes
-        </h1>
-      </div>
-      <div class="ui-g-12">
-        <span class="ui-float-label">
-          <input pInputText type="text" name="pesquisa" size="40" [(ngModel)]="filtro" #pesquisa="ngModel">
-          <label for="float-input">Cliente</label>
-        </span>
-      </div>
-      <div class="ui-g-12">
-        <button pButton type="submit" label="Buscar"></button>
-      </div>
-    </div>
-  </form>
-</div>
+<h1>
+  Clientes
+</h1>
+
 <div class="ui-g">
   <div class="ui-g-12">
     <p-table [value]="clientes" [paginator]="true" [rows]="10" [responsive]="true">

@@ -18,4 +18,5 @@ export class Venda{
   data: Date;
  cliente: Clientes;
  produtos: Produto [] = [];
+ quantidade:any;
 }
