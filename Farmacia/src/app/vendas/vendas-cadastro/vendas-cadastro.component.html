@@ -3,12 +3,9 @@
 <div class="container">
   <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
     <div class="ui-g-12">
-        <input pInputText type="number" name="cliente" [(ngModel)]="venda.cliente" #cliente="ngModel">
+      <h4>ID do cliente</h4>
+      <input pInputText type="number" min="0" max="100" name="cliente" [(ngModel)]="venda.cliente" #cliente="ngModel">
       <h1>Nova venda</h1>
-      <div class="ui-g-12">
-        <h4>Insira o cliente</h4>
-        <input pInputText type="number" name="cliente" [(ngModel)]="venda.cliente" #cliente="ngModel">
-      </div>
       <p-table [value]="produtos" [paginator]="true" [rows]="5" [responsive]="true">
         <ng-template pTemplate="header">
           <tr>
