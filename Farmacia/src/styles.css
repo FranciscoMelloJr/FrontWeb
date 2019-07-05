@@ -20,6 +20,10 @@ label {
   text-align: center;
 }
 
+.col-qnt {
+  width: 150px;
+  text-align: center;
+}
 .col-id-header {
   width: 60px;
 }
