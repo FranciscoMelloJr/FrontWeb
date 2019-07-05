@@ -1,31 +1,67 @@
 <p-toast></p-toast>
 
 <div class="container">
-
   <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
     <div class="ui-g">
       <div class="ui-g-12">
         <h1>Nova venda</h1>
+        <h4>Insira o cliente</h4>
+        <span class="ui-float-label">
+          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
+            [(ngModel)]="venda.cliente" #nome="ngModel">
+          <label for="float-input">ID</label>
+        </span>
       </div>
-      <div class="ui-g-12 ui-md-9 ui-fluid">
-        <!--fazer drop down para cliente-->
+      <h4>Insira os produtos</h4>
+      <div class="ui-g-12">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
+            [(ngModel)]="venda.produtos" #nome="ngModel">
+          <label for="float-input">ID</label>
+        </span>
+        <span class="ui-float-label">
+            <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
+              [(ngModel)]="venda." #nome="ngModel">
+            <label for="float-input">ID</label>
+          </span>
       </div>
-      <div class="ui-g-12 ui-md-9 ui-fluid">
-        <!--escolher os produtos-->
+      <div class="ui-g-12">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
+            [(ngModel)]="venda.produtos" #nome="ngModel">
+          <label for="float-input">ID</label>
+        </span>
       </div>
-      <div class="ui-g-12 ui-md-9 ui-fluid">
-        <p-pickList [source]="produtos" [target]="venda.produtos"
-        sourceHeader="Produtos" targetHeader="Selecionados"
-        [responsive]="true"  [dragdrop]="true"
-        [showSourceControls]="false" [showTargetControls]="false">
-          <ng-template let-produto pTemplate="item">
-              <div class="ui-helper-clearfix">
-                  <div style="font-size:12px;float:right;margin:5px 5px 0 0">{{produto.nome}}</div>
-              </div>
-          </ng-template>
-      </p-pickList>
+      <div class="ui-g-12">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
+            [(ngModel)]="venda.produtos" #nome="ngModel">
+          <label for="float-input">ID</label>
+        </span>
+      </div>
+      <div class="ui-g-12">
+        <span class="ui-float-label">
+          <input id="float-input" type="text" pInputText type="number" [min]="0" [max]="100" name="nome"
+            [(ngModel)]="venda.produtos" #nome="ngModel">
+          <label for="float-input">ID</label>
+        </span>
       </div>
 
+      <!--
+      <p-dropdown  name="produto" [options]="produtos" [(ngModel)]="venda.produtos" ></p-dropdown>
+-->
+      <!--
+      <div class="ui-g-12 ui-md-9 ui-fluid">
+        <p-pickList [source]="produtos" [target]="venda.produtos" sourceHeader="Produtos" targetHeader="Selecionados"
+          [responsive]="true" [dragdrop]="true" [showSourceControls]="false" [showTargetControls]="false">
+          <ng-template let-produto pTemplate="item">
+            <div class="ui-helper-clearfix">
+              <div style="font-size:12px;float:right;margin:5px 5px 0 0">{{produto.nome}}</div>
+            </div>
+          </ng-template>
+        </p-pickList>
+      </div>
+-->
       <div class="ui-g-12">
         <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
       </div>

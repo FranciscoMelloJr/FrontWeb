@@ -15,6 +15,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [VendasCadastroComponent],
@@ -25,6 +26,7 @@ import { TooltipModule } from 'primeng/tooltip';
     CurrencyMaskModule,
     InputTextModule,
     PickListModule,
+    DropdownModule,
     ButtonModule,
     BrowserModule,
     BrowserAnimationsModule,

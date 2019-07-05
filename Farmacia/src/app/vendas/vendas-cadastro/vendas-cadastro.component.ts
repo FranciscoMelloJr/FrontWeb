@@ -5,6 +5,7 @@ import { VendasService } from './../vendas.service';
 import { Component, OnInit } from '@angular/core';
 import { Venda, Produto, Clientes } from '../model';
 import { FormControl } from '@angular/forms';
+import { ClientesService } from 'src/app/clientes/clientes.service';
 
 @Component({
   selector: 'app-vendas-cadastro',
@@ -17,25 +18,33 @@ export class VendasCadastroComponent implements OnInit {
   produtos: Produto[];
   cliente: Clientes[];
 
-
   constructor(
     private service: VendasService,
-    private ProdutosService: ProdutosService,
-    private vendasService: VendasService,
+    private produtosService: ProdutosService,
     private messageService: MessageService,
+    private clientesService: ClientesService,
     private rota: ActivatedRoute,
   ) { }
 
   ngOnInit() {
+    this.pesquisarClientes();
     this.pesquisarProdutos();
   }
 
   pesquisarProdutos() {
-    this.ProdutosService.listarProduto()
+    this.produtosService.listarProduto()
       .then((dados) => {
         this.produtos = dados;
       });
   }
+
+  pesquisarClientes() {
+    this.clientesService.listarCliente()
+      .then((dados) => {
+        this.cliente = dados;
+      });
+  }
+
 
   salvar(form: FormControl) {
     this.service.adicionar(this.venda)
